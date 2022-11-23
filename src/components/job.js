@@ -1,6 +1,6 @@
 import React from "react";
 import { FormattedDate, FormattedNumber, FormattedPlural } from "react-intl";
-// Views with format in english and spanish #,###,###.##
+// Put million or millions depending on the number of salary and depending on the language
 
 const Job = (props) => {
   return (
@@ -8,9 +8,7 @@ const Job = (props) => {
       <th scope="row">{props.offer.id}</th>
       <td>{props.offer.name}</td>
       <td>{props.offer.company}</td>
-      <td>{props.offer.salary} 
-        <FormattedPlural value={props.offer.salary} one="millon" other="millones"></FormattedPlural>
-      </td>
+      <td>{props.offer.salary} <FormattedPlural value={props.offer.salary} one="million" other="millions" /></td>
       <td>{props.offer.city}</td>
       <td>
         <FormattedDate
